@@ -8,9 +8,9 @@ import { styles } from './AppStyles.js';
 export default function App() {
 
   const initialFoods = [
-    // { food: "Oranges", price: "0.50" },
-    // { food: "Bananas", price: "0.25" },
-    // { food: "Milk", price: "3.00" },
+    { food: "Oranges", price: "0.50" },
+    { food: "Bananas", price: "0.25" },
+    { food: "Milk", price: "3.00" },
   ];
 
   const calculateInitialTotal = () => {
@@ -152,6 +152,10 @@ export default function App() {
   
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.cartApp}>CartApp 🛒</Text>
+        <Text style={styles.total}>Total: ${shoppingTotal}</Text>
+        <ScrollView style={styles.foodListContainer}>
+        <Text style={styles.titleList}>Shopping List:</Text>
         {loading ? (
           <ActivityIndicator size="large" color="#968ec0" />
         ) : foodList?.length > 0 ? (
@@ -167,6 +171,11 @@ export default function App() {
         ) : (
           <Text style={styles.emptyText}>No Items Yet</Text>
         )}
+      </ScrollView>
+        <TouchableOpacity style={styles.iconButton} onPress={() => setShowCamera(true)}>
+          <Feather name="camera" size={35} color="white" />
+        </TouchableOpacity>
+        <ConfirmationModal />
     </SafeAreaView>
   );
 }
