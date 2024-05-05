@@ -15,8 +15,13 @@ Here's how to set up the API:
 4. Go to [replit.com/](https://replit.com/) and create a Replit account
 5. Click on the `+ Create Repl` button to create a new Repl
 6. Select the `FastAPI` template
+7. Install the required packages one by one
 
-7. Copy this code in the editor, it creates a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
+```bash
+pip install openai
+pip install python-multipart
+```
+8. Copy this code in the editor, it creates a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
 
 ```python
 
@@ -82,5 +87,4 @@ If there are 2 or more food items in the image, return only one of them.
 ```
 
 ### Documentation:
-
-[platform.openai.com/docs/guides/vision] (https://platform.openai.com/docs/guides/vision)
+https://platform.openai.com/docs/guides/vision
